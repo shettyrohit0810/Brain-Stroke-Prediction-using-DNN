@@ -5,17 +5,17 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-Web%20App-red.svg)](https://streamlit.io)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-A comprehensive machine learning system that predicts the likelihood of brain stroke in patients using Deep Neural Networks, achieving **92% test accuracy**. The project includes a complete ML pipeline, web application, and detailed analysis.
+A comprehensive machine learning system that predicts the likelihood of brain stroke in patients using Deep Neural Networks, achieving **92.57% test accuracy** with a **0.97 stroke-class recall** after addressing class imbalance with SMOTE. The project includes a complete ML pipeline, web application, and detailed analysis.
 
 ## 🎯 Project Overview
 
 This project addresses a critical healthcare challenge by developing an AI-powered system to predict stroke risk in patients. Stroke is the second leading cause of death globally, and early prediction can significantly improve patient outcomes through preventive care.
 
 ### Key Achievements
-- **92% Test Accuracy** on stroke prediction
+- **92.57% Test Accuracy** with **0.97 stroke-class recall** (post-SMOTE), up from a pre-SMOTE baseline recall of just 0.07
 - **IEEE Best Technical Presentation** (500+ audience)
 - **Government of India Copyright** awarded
-- **Springer Research Publication** in melody generation using deep learning
+- **Co-authored IEEE Publication**: "Stroke Risk Prediction Using Deep Neural Networks: Empowering Healthcare Services for Early Identification and Prevention," 2023 IEEE NMITCON — [IEEE Xplore #10276249](https://ieeexplore.ieee.org/document/10276249)
 - **Production-ready Streamlit web application**
 
 ## 🚀 Features
@@ -121,11 +121,14 @@ jupyter notebook Final.ipynb
 
 ## 📈 Model Performance
 
-### Accuracy Metrics
-- **Test Accuracy**: 92%
-- **Precision**: 0.95 (No Stroke), 0.11 (Stroke)
-- **Recall**: 0.97 (No Stroke), 0.07 (Stroke)
-- **F1-Score**: 0.96 (No Stroke), 0.09 (Stroke)
+### Before vs. After SMOTE
+
+| Metric | Pre-SMOTE (baseline) | Post-SMOTE (current) |
+|---|---|---|
+| Stroke-Class Recall | **0.07** | **0.97** |
+| Test Accuracy | ~92% | **92.57%** |
+
+The pre-SMOTE model's ~92% accuracy was almost entirely a majority-class artifact — it correctly identified only 7% of actual stroke cases (recall of 0.07). Applying SMOTE to correct the class imbalance raised stroke-class recall to 0.97 while holding overall test accuracy at 92.57%, making the model far more useful for its actual purpose: catching at-risk patients rather than just predicting the majority class.
 
 ### Model Architecture
 ```
@@ -176,7 +179,7 @@ Trainable params: 2,817
 
 - **IEEE Best Technical Presentation** - Presented to 500+ audience
 - **Government of India Copyright** - Official recognition for innovation
-- **Springer Research Publication** - Academic contribution to AI field
+- **Co-authored IEEE Publication** - "Stroke Risk Prediction Using Deep Neural Networks: Empowering Healthcare Services for Early Identification and Prevention," 2023 IEEE International Conference on Network, Multimedia and Information Technology (NMITCON), [IEEE Xplore #10276249](https://ieeexplore.ieee.org/document/10276249)
 - **Real-world Application** - Production-ready healthcare solution
 
 ## 🔮 Future Enhancements
